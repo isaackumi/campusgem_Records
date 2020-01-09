@@ -107,8 +107,8 @@
     </div>
     <div class="custom-file">
       <input type="file" class="custom-file-input" id="inputGroupFile01"
-        aria-describedby="inputGroupFileAddon01">
-      <label class="custom-file-label" for="inputGroupFile01">Choose profile picture</label>
+        aria-describedby="inputGroupFileAddon01" name="profile">
+      <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
     </div>
   </div>
 
@@ -126,7 +126,7 @@
                             </div>
                         </div>
                         <div>
-                            <input class="btn btn--radius-2 btn--red" type="submit" value="Submit" name="uadd">
+                            <input class="btn btn-success" type="submit" value="Submit" name="uadd">
                         </div>
                     </form>
           <?php if (isset($_SESSION['response'])): ?>
@@ -155,7 +155,6 @@
     <!-- Main JS-->
     <script src="js/global.js"></script>
 
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
-
+</body>
 </html>
 <!-- end document-->

@@ -10,8 +10,10 @@ if (isset($_GET['uadd'])) {
 	$pphone = $_GET['phone'];
 	$institution = $_GET['institution'];
   $fb = $_GET['fb'];
+	$profile = $_GET['profile'];
+	$year = date('Y');
 	//call function to add
-	$ret =  addcontactctrl($pname, $pemail, $pphone, $institution,$fb);
+	$ret =  addcontactctrl($pname, $pemail, $pphone, $institution,$fb,$year,$profile);
 	//echo result
 	if ($ret) {
 		 header('Location: ../index.php');

@@ -2,11 +2,11 @@
 //call on the person class
 require('../model/user.php');
 //controller function to add
-function addcontactctrl($a, $b, $c, $d,$e){
+function addcontactctrl($a, $b, $c, $d,$e,$f,$g){
 	//create a new instance of the class
 	$insertp = new person_class;
 	//run the insert method
-	$checkinsert = $insertp->addcontact_mthd($a, $b, $c, $d,$e);
+	$checkinsert = $insertp->addcontact_mthd($a, $b, $c, $d,$e,$f,$g);
 	if ($checkinsert)
 		return $checkinsert;
 	else
