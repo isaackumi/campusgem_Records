@@ -3,7 +3,8 @@
 
 CREATE TABLE `user` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(100),
+  `first_name` varchar(100),
+  `last_name` varchar(100)
   `email` varchar(50),
   `contact` varchar(10) ,
   `institution` varchar(10),
@@ -27,5 +28,5 @@ CREATE TABLE `admin` (
 
 
 
-INSERT into `admin` (`username`,`email`,`password`)
+INSERT into `admin` (`first_name`,`email`,`password`)
 VALUES('isaackumi','isaac.kumi@ashesi.edu.gh','123405');
