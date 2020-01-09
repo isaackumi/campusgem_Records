@@ -1,6 +1,6 @@
 <?php
 //call on the person class
-require('../classes/personclass.php');
+require('../model/user.php');
 //controller function to add
 function addcontactctrl($a, $b, $c, $d,$e,$f,$g,$h){
 	//create a new instance of the class
@@ -65,6 +65,7 @@ function getUser($a){
 		return $contact;
 }
 }
+
 function emailExist($a){
 	$user = new person_class();
 	$checkuser = $user->emailExist($a);
@@ -80,4 +81,33 @@ function emailExist($a){
 		return $contact;
 }
 }
+
+
+
+
+function search_user_fxn($stm){
+	//Create an array variable to hold list of search records
+	$user = array();
+
+	//create an instance of the product class
+	$obj = new person_class();
+
+	//run the search product method
+	$user_records = $obj->searchUser($stm);
+
+	//check if the method worked
+	if ($user_records) {
+
+		//loop to see if there is more than one result
+		//fetch one at a time
+		while ($one_record = $obj->db_fetch()) {
+
+			//Assign each result to the array
+			$user[] = $one_record;
+		}
+	}
+	//return the array
+	return $user;
+}
+
 ?>

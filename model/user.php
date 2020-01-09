@@ -32,6 +32,8 @@ class person_class extends db_connection
 		//run the sql execution
 		return $this->db_query($sql);
 	}
+
+
 	public function getUserById($id){
 		$sql = "SELECT *
 					FROM user
@@ -43,14 +45,24 @@ class person_class extends db_connection
 
 	public function update_contact_mthd($id,$a, $b, $c, $d,$e,$f,$g,$h){
 		//write the sql for select
-		$sql = "UPDATE studentlist
+		$sql = "UPDATE user
 					SET `pname`='$a',
 						`email`='$b',
 						`pcontact`='$c',
 						`pdob`='$d'
-					WHERE pid='$id'";
+					WHERE user_id='$id'";
 		//run the sql execution
 		return $this->db_query($sql);
 	}
+
+
+	public function searchUser($sterm){
+		//a query to search product matching term
+		$sql = "SELECT * FROM user WHERE username LIKE '%$sterm%'";
+
+		//execute the query and return boolean
+		return $this->db_query($sql);
+	}
+
 }
 ?>
