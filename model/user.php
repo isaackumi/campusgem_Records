@@ -10,9 +10,9 @@ class person_class extends db_connection
 	public $user_id = null;
 	public $user_name = null;
 	//method for insert
-	public function addcontact_mthd($a, $b, $c, $d,$e,$f,$g,$h){
+	public function addcontact_mthd($a, $b, $c, $d,$e){
 		//write the query
-		$sql = "INSERT INTO `user`(`first_name`,`last_name`, `email`, `contact`, `institution`,`facebook`,`year`,`profile`) VALUES('$a', '$b', '$c', '$d', '$e', '$f', '$g', '$h')";
+		$sql = "INSERT INTO `user`(`first_name`,`last_name`, `email`, `contact`, `institution`,`facebook`,`year`) VALUES('$a', '$b', '$c', '$d', '$e')";
 		//run the query
 		return $this->db_query($sql);
 	}

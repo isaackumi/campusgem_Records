@@ -427,8 +427,8 @@ session_start();
             		echo "<td>$phone</td>";
             		echo "<td>$fb</td>";
                 echo "<td>$year</td>";
-            		echo "<td><a href='delete.php?deleteId=$id' class= 'btn btn-outline-danger'>Delete</a>
-                    | <a href='addcontact.php?updateId=$id' class= 'btn btn-outline-success'>Update</a>
+            		echo "<td><a href='../view/delete.php?deleteId=$id' class= 'btn btn-outline-danger'>Delete</a>
+                    | <a href='../view/update.php?updateId=$id' class= 'btn btn-outline-success'>Update</a>
               </td>";
               echo "</tr>";
             	}
@@ -438,7 +438,30 @@ session_start();
 
 
         </div>
-        <!-- /.container-fluid -->
+      <?php if (isset($_SESSION['response'])): ?>
+  <div class='alert alert-danger'>
+
+  	<?php
+  	echo $_SESSION['response'];
+  	unset($_SESSION['response']);
+  	?>
+
+  	</div>
+  <?php endif ?>
+
+
+  <?php if (isset($_SESSION['update_response'])): ?>
+
+        <div class="alert alert-success">
+          <?php
+          echo $_SESSION['update_response'];
+          unset($_SESSION['update_response']);
+           ?>
+
+        </div>
+
+      <?php endif ?>
+
 
       </div>
       <!-- End of Main Content -->
